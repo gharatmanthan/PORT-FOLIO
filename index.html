@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Linking external CSS -->
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Manthan Gharat. Explore my journey and aspirations!</p>
+        </header>
+
+        <section id="welcome" class="section">
+            <h2>Welcome</h2>
+            <div class="media">
+                <img src="your-photo.jpg" alt="Your Photo" class="profile-photo">
+                <video controls class="intro-video">
+                    <source src="introduction.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p><strong>Name:</strong> Manthan Gharat</p>
+            <p><strong>Location:</strong> palghar</p>
+            <p><strong>Education:</strong> [Your Education]</p>
+            <p><strong>Languages Known:</strong> [Languages]</p>
+        </section>
+
+        <section id="achievements" class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>[Achievement 1]</li>
+                <li>[Achievement 2]</li>
+                <li>[Achievement 3]</li>
+            </ul>
+        </section>
+
+        <section id="goals" class="section">
+            <h2>Future Goals</h2>
+            <p>[Your future goals and aspirations]</p>
+        </section>
+
+        <section id="personal" class="section">
+            <h2>Personal Side</h2>
+            <p><strong>Hobbies:</strong> [Your hobbies and why you love them]</p>
+            <p><strong>Role Models:</strong> [Your role models and reasons]</p>
+            <p><strong>Favorite Books:</strong> [Books and why you like them]</p>
+            <p><strong>Favorite Websites/Startups:</strong> [Websites/Startups and reasons]</p>
+            <p><strong>Volunteering Experience:</strong> [Details of your volunteering experience]</p>
+        </section>
+
+        <footer class="footer">
+            <p>Contact me at <a href="mailto:122manthan2109@sjcem.edu.in" class="email-btn">122manthan2109@sjcem.edu.in</a></p>
+        </footer>
+    </div>
+    <script>
+    // Fade-in sections on scroll
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    sections.forEach(section => {
+        section.classList.add('fade-section');
+        observer.observe(section);
+    });
+
+    // Profile photo hover effect
+    const photo = document.querySelector('.profile-photo');
+    if(photo) {
+        photo.addEventListener('mouseenter', () => {
+            photo.classList.add('photo-pop');
+        });
+        photo.addEventListener('mouseleave', () => {
+            photo.classList.remove('photo-pop');
+        });
+    }
+    </script>
+</body>
+</html>
